@@ -240,7 +240,7 @@ for _file in args.files:
     components = _file.split('/')
     if components[0] == ".":
         del components[0]
-    if any(s[0] == '.' for s in components) or file_ext == '.md':
+    if any(s[0] == '.' for s in components) or file_ext == '.md' or _file == 'package.json':
         debug('skipping file %s' % _file)
     else:
         debug('checking file %s' % _file)
