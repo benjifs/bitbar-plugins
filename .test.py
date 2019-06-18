@@ -238,6 +238,10 @@ elif not args.files:
 for _file in args.files:
     file_name, file_ext = os.path.splitext(_file)
     components = _file.split('/')
+    if file_ext == ".json":
+        print "_file: " + _file
+        print "file_name: " + file_name
+        print "file_name + file_ext: " + file_name + file_ext
     if components[0] == ".":
         del components[0]
     if any(s[0] == '.' for s in components) or file_ext in ['.md', '.json']:
